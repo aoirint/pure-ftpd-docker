@@ -1,0 +1,12 @@
+# License: CC0-1.0
+services:
+  ftpd:
+    image: aoirint/pure-ftpd:latest
+    ports:
+      - "${HOST_FTP_PORT}:21/tcp"
+      - "${HOST_FTP_DATA_PORT}:30000-30009/tcp"
+    volumes:
+      - "./pure-ftpd.conf:/etc/pure-ftpd.conf"
+      - "./pureftpd.passwd:/etc/pureftpd.passwd"
+      - "./volumes/pureftpd-logs:/pureftpd-logs"
+      - "./volumes/ftphome:/ftphome"

@@ -1,0 +1,5 @@
+/.env*
+/pure-ftpd.conf
+/volumes
+/*.pdb
+/*.passwd

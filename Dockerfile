@@ -60,5 +60,10 @@ RUN <<EOF
 EOF
 
 COPY --from=build-env /install/ /usr/local/
+RUN <<EOF
+    cp /usr/local/etc/pure-ftpd.conf /etc/pure-ftpd.conf
+EOF
 
-ENTRYPOINT [ "gosu", "ftpuser", "/usr/local/sbin/pure-ftpd" ]
+ADD ./entrypoint.sh /usr/local/bin/
+ENTRYPOINT [ "entrypoint.sh" ]
+CMD [ "/usr/local/sbin/pure-ftpd", "/etc/pure-ftpd.conf" ]
