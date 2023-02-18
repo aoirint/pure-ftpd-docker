@@ -54,10 +54,11 @@ RUN <<EOF
 EOF
 
 RUN <<EOF
-    groupadd -o -g 1000 user
-    useradd -o -m -u 1000 -g user user
+    groupadd -o -g 1000 ftpuser
+    groupadd -o -g 2000 ftpgroup
+    useradd -o -m -u 1000 -g ftpuser -G ftpgroup ftpuser
 EOF
 
 COPY --from=build-env /install/ /usr/local/
 
-ENTRYPOINT [ "gosu", "user", "/usr/local/sbin/pure-ftpd" ]
+ENTRYPOINT [ "gosu", "ftpuser", "/usr/local/sbin/pure-ftpd" ]
