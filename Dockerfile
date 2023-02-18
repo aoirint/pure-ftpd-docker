@@ -37,7 +37,7 @@ RUN <<EOF
     mkdir -p /install
     chown -R "user:user" /install
 
-    gosu user ./configure --prefix=/install --with-tls --with-puredb
+    gosu user ./configure --prefix=/install --with-altlog --with-tls --with-puredb
     gosu user make install-strip
 EOF
 
