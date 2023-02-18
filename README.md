@@ -48,7 +48,7 @@ sudo apt install openssl
 openssl passwd -6
 ```
 
-Open `pure-ftpd.conf` and configure like below.
+Open `pure-ftpd.conf` and configure like below. Bind and allow incoming connections to `21/tcp` and `30000-30009/tcp`.
 
 ```conf
 Daemonize                    false
