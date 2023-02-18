@@ -20,7 +20,7 @@ docker compose up -d
 
 Get a TLS certificate for your domain from a provider like Let's Encrypt and mount it on `/pureftpd-certs/pure-ftpd.pem`.
 
-Open `pure-ftpd.conf` and configure like below.
+Open `pure-ftpd.conf` and configure like below (TLS=2 disallows a plaintext connection).
 
 ```conf
 TLS                          2
