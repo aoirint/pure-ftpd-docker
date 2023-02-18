@@ -16,6 +16,12 @@ After the configuration, start a docker compose service.
 docker compose up -d
 ```
 
+## Configurations
+
+- [Logging](#configuration-logging)
+- [TLS](#configuration-tls)
+- [puredb (Virtual user)](#configuration-puredb-virtual-user)
+
 ### Configuration: Logging
 
 Open `pure-ftpd.conf` and configure like below. Mount `/pureftpd-logs`.
@@ -24,7 +30,7 @@ Open `pure-ftpd.conf` and configure like below. Mount `/pureftpd-logs`.
 AltLog                       clf:/pureftpd-logs/pureftpd-clf.log
 ```
 
-## Configuration: TLS
+### Configuration: TLS
 
 Get a TLS certificate for your domain from a provider like Let's Encrypt and mount it on `/pureftpd-certs/pure-ftpd.pem`.
 
