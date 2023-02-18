@@ -21,6 +21,7 @@ docker compose up -d
 - Reference: <https://github.com/jedisct1/pure-ftpd/blob/201bf0c31c33c0f1750642ba725e404f707ae41a/README.Virtual-Users>
 
 Create `pureftpd.passwd` like below.
+Mounting this file on `/etc/pureftpd.passwd`, `/etc/pureftpd.pdb` will be automatically generated on the container start.
 
 ```passwd
 hoge:<hashed_password>:1000:1000::/ftphome/hoge:::::::::::::
