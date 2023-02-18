@@ -18,8 +18,6 @@ docker compose up -d
 
 ### Configuration: puredb (Virtual user)
 
-You can use `puredb` CLI (`pure-pw`) in the image or edit passwd file manually.
-
 - Reference: <https://github.com/jedisct1/pure-ftpd/blob/201bf0c31c33c0f1750642ba725e404f707ae41a/README.Virtual-Users>
 
 Create `pureftpd.passwd` like below.
