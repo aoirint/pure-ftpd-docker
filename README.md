@@ -16,6 +16,14 @@ After the configuration, start a docker compose service.
 docker compose up -d
 ```
 
+### Configuration: Logging
+
+Open `pure-ftpd.conf` and configure like below. Mount `/pureftpd-logs`.
+
+```conf
+AltLog                       clf:/pureftpd-logs/pureftpd-clf.log
+```
+
 ## Configuration: TLS
 
 Get a TLS certificate for your domain from a provider like Let's Encrypt and mount it on `/pureftpd-certs/pure-ftpd.pem`.
@@ -54,7 +62,6 @@ Open `pure-ftpd.conf` and configure like below. Bind and allow incoming connecti
 Daemonize                    false
 NoAnonymous                  yes
 PureDB                       /etc/pureftpd.pdb
-AltLog                       clf:/pureftpd-logs/pureftpd-clf.log
 CreateHomeDir                yes
 PassivePortRange             30000 30009
 ForcePassiveIP               127.0.0.1
