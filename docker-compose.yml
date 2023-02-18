@@ -10,3 +10,4 @@ services:
       - "./pureftpd.passwd:/etc/pureftpd.passwd"
       - "./volumes/pureftpd-logs:/pureftpd-logs"
       - "./volumes/ftphome:/ftphome"
+      - "./volumes/pureftpd-certs:/pureftpd-certs"

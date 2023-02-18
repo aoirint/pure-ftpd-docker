@@ -18,7 +18,15 @@ docker compose up -d
 
 ## Configuration: TLS
 
-TODO
+Get a TLS certificate for your domain from a provider like Let's Encrypt and mount it on `/pureftpd-certs/pure-ftpd.pem`.
+
+Open `pure-ftpd.conf` and configure like below.
+
+```conf
+TLS                          2
+TLSCipherSuite               HIGH
+CertFile                     /pureftpd-certs/pure-ftpd.pem
+```
 
 ### Configuration: puredb (Virtual user)
 
